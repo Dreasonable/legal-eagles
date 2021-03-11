@@ -1,13 +1,20 @@
 <template>
   <div class="header">
+    <div class="brand">
+      <h1 class="name">
+        <router-link :to="{ name: 'Home' }">Daniel Reason</router-link>
+      </h1>
+      <p class="title">Software Engineer</p>
+    </div>
     <div
       class="nav"
       id="nav"
-      :class="{'menu-open': menuOpen === true}"
     >
       <router-link :to="{ name: 'Home' }">Home</router-link>
+      <router-link :to="{ name: 'Projects' }">Projects</router-link>
       <router-link :to="{ name: 'About' }">About</router-link>
       <router-link :to="{ name: 'Contact' }">Contact</router-link>
+      <a>CV ⇩</a>
     </div>
     <div
       class="hamburger-menu"
@@ -41,11 +48,34 @@ export default {
 <style scoped lang="scss">
 .header {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 100%;
-  height: 4rem;
-  background-color: black;
+  margin-bottom: 2rem;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  .name {
+    margin: 0;
+  }
+
+  .name a {
+    font-weight: 800;
+    text-decoration: none;
+    color: black;
+  }
+
+  .title {
+    color: black;
+    margin: 0;
+  }
 }
 
 .nav {
@@ -53,35 +83,51 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  width: 20%;
+  width: 100%;
   height: 100%;
-  opacity: 0;
-  top: 0;
-  right: -10rem;
-  background-image: linear-gradient(to right, black, white);
-  padding-right: 4rem;
 
   a {
-    padding: 0 1rem;
+    position: relative;
+    margin: 0 4rem;
     font-weight: bold;
     text-decoration: none;
-    color: white;
+    text-transform: uppercase;
+    color: black;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      right: 0;
+      background-color: black;
+      transition: all 0.2s ease-in-out 0s;
+    }
 
     &.router-link-exact-active {
-      color: #41D9FA;
+      color: #63855F;
+
+      &::after {
+        left: 0;
+        width: 100%;
+        transition: all 0.2s ease-in-out 0s;
+        transition-delay: 0.1s;
+      }
     }
   }
 }
 
-.menu-open {
-  transition: opacity 0.2s, right 0.5s;
-  opacity: 1;
-  right: 0;
-}
+// .menu-open {
+//   transition: opacity 0.2s, right 0.5s;
+//   opacity: 1;
+//   right: 0;
+// }
 
 .hamburger-menu {
   position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -93,22 +139,22 @@ export default {
   &:hover {
     cursor: pointer;
   }
-}
 
-span {
-  width: 30px;
-  height: 3px;
-  margin: 3px 0;
-  border-radius: 1px;
-  transition: 0.2s;
-  opacity: 1;
-  background-color: white;
-  transform: rotate(0deg);
+  span {
+    width: 30px;
+    height: 3px;
+    margin: 3px 0;
+    border-radius: 1px;
+    transition: 0.2s;
+    opacity: 1;
+    background-color: black;
+    transform: rotate(0deg);
+  }
 }
 
 .opened {
   span {
-    background-color: black;
+    // background-color: black;
 
     &:nth-child(1) {
       transition: 0.5s;
