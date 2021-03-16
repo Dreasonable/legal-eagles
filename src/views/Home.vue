@@ -3,6 +3,7 @@
     <h1>Home Page</h1>
     <!-- <HeroBanner /> -->
     <HelloWorld msg="Hello World!" />
+
   </div>
 </template>
 
@@ -26,6 +27,9 @@ export default {
 
 <style scoped lang="scss">
   .home {
-  
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
   }
 </style>

@@ -51,8 +51,9 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  margin: 0 2rem 2rem 2rem;
+  border-bottom: 2px solid black;
 }
 
 .brand {
@@ -81,14 +82,13 @@ export default {
 .nav {
   transition: opacity 0.2s, right 0.5s;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 50%;
   height: 100%;
 
   a {
     position: relative;
-    margin: 0 4rem;
     font-weight: bold;
     text-decoration: none;
     text-transform: uppercase;

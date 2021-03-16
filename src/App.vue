@@ -39,8 +39,8 @@ h1 {
 .container {
   margin: 2rem;
   padding: 2rem;
-  border: 2px solid black;
-  border-radius: 2rem;
+  // border: 2px solid black;
+  // border-radius: 2rem;
   min-height: 20rem;
 }
 </style>
