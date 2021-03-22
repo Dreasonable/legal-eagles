@@ -1,14 +1,25 @@
 <template>
-  <div class="hello">
-    <!-- <h1>{{ msg }}</h1> -->
+  <div class="container">
+    <h1>{{ msg }}</h1>
+    <img alt="Logo" src="../assets/logo.png" />
+    <div v-for="item in data" :id="item.id" :key="item.id" :title="item.title">
+      {{ item.id }}: {{ item.title }}
+    </div>
   </div>
 </template>
 
 <script>
+import data from "../data/data.json";
+
 export default {
   name: "HelloWorld",
   props: {
     msg: String
+  },
+  data() {
+    return {
+      data
+    };
   }
 };
 </script>

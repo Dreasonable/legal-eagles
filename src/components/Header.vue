@@ -1,24 +1,21 @@
 <template>
   <div class="header">
-    <div class="brand">
-      <h1 class="name">
-        <router-link :to="{ name: 'Home' }">Daniel Reason</router-link>
+    <div class="header__brand">
+      <h1 class="header__brand--name">
+        <router-link :to="{ name: 'Home' }">New Vue Project</router-link>
       </h1>
-      <p class="title">Software Engineer</p>
     </div>
     <div
-      class="nav"
-      id="nav"
+      class="nav" id="nav"
+      :class="{ opened: menuOpen === true }"
     >
       <router-link :to="{ name: 'Home' }">Home</router-link>
-      <router-link :to="{ name: 'Projects' }">Projects</router-link>
       <router-link :to="{ name: 'About' }">About</router-link>
       <router-link :to="{ name: 'Contact' }">Contact</router-link>
-      <a>CV ⇩</a>
     </div>
     <div
       class="hamburger-menu"
-      :class="{'opened': menuOpen === true}"
+      :class="{ opened: menuOpen === true }"
       @click="openCloseMenu()"
     >
       <span />
@@ -52,36 +49,29 @@ export default {
   justify-content: center;
   align-items: center;
   padding-bottom: 2rem;
-  margin: 0 2rem 2rem 2rem;
-  border-bottom: 2px solid black;
-}
 
-.brand {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2rem;
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
 
-  .name {
-    margin: 0;
-  }
+    &--name {
+      margin: 0;
 
-  .name a {
-    font-weight: 800;
-    text-decoration: none;
-    color: black;
-  }
-
-  .title {
-    color: black;
-    margin: 0;
+      a {
+        font-weight: 800;
+        text-decoration: none;
+        color: black;
+      }
+    }
   }
 }
 
 .nav {
   transition: opacity 0.2s, right 0.5s;
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   width: 50%;
@@ -106,7 +96,7 @@ export default {
     }
 
     &.router-link-exact-active {
-      color: #63855F;
+      color: black;
 
       &::after {
         left: 0;
@@ -118,11 +108,11 @@ export default {
   }
 }
 
-// .menu-open {
-//   transition: opacity 0.2s, right 0.5s;
-//   opacity: 1;
-//   right: 0;
-// }
+.menu-open {
+  transition: opacity 0.2s, right 0.5s;
+  opacity: 1;
+  right: 0;
+}
 
 .hamburger-menu {
   position: absolute;
@@ -153,6 +143,8 @@ export default {
 }
 
 .opened {
+  display: flex;
+
   span {
     // background-color: black;
 

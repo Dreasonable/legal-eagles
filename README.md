@@ -1,4 +1,6 @@
-# dan
+## Vue Boilerplate
+
+Includes barebone nav and data.
 
 ## Project setup
 ```
