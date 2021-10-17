@@ -1,7 +1,17 @@
 <template>
-  <div class="contact">
-    <h1>This is a contact page</h1>
-  </div>
+  <Home />
 </template>
+
+<script>
+// @ is an alias to /src
+import Home from "@/views/Home.vue";
+
+export default {
+  name: "Contact",
+  components: {
+    Home
+  }
+};
+</script>
 
 <style lang="scss" scoped></style>

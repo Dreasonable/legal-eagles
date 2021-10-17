@@ -7,7 +7,7 @@
 import Home from "@/views/Home.vue";
 
 export default {
-  name: "About",
+  name: "News",
   components: {
     Home
   }
