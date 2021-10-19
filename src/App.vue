@@ -36,18 +36,31 @@ body {
 .container {
   width: 1400px;
 
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+  }
+
   &--wide {
     width: 1680px;
+
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+    }
   }
 
   &--narrow {
     width: 924px;
+
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+    }
   }
 
   &--full-screen {
     width: 100%;
   }
 }
+
 
 .extrabold {
   font-weight: 800;

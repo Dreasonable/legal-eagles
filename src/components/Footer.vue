@@ -94,6 +94,10 @@ footer {
   flex-direction: column;
   margin: 0 auto;
 
+  @media only screen and (max-width: 767px) {
+    margin: 0 1rem;
+  }
+
   a {
     display: flex;
     text-decoration: none;
@@ -108,6 +112,10 @@ footer {
     line-height: 1rem;
     font-weight: 300;
 
+    @media only screen and (max-width: 767px) {
+      height: auto;
+    }
+
     &__content {
       display: flex;
       justify-content: space-between;
@@ -116,6 +124,17 @@ footer {
 
       div {
         width: 25%;
+
+        @media only screen and (max-width: 767px) {
+          margin: 0.5rem;
+          width: 100%;
+        }
+      }
+
+      @media only screen and (max-width: 767px) {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 33.33%;
       }
     }
 
@@ -123,6 +142,11 @@ footer {
       position: absolute;
       top: 37px;
       left: 37px;
+
+      @media only screen and (max-width: 767px) {
+        top: 30px;
+        left: 21px;
+      }
     }
 
     .address {
@@ -153,15 +177,36 @@ footer {
     width: 100%;
     height: 50px;
 
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      height: 140px;
+      font-size: 13px;
+    }
+
     .social-media--links {
       display: flex;
       align-items: center;
       margin-left: 30px;
 
+      @media only screen and (max-width: 767px) {
+        margin-left: 1rem;
+
+        a {
+          height: 24px;
+        }
+      }
+
       span {
         font-weight: 800;
         font-size: 1rem;
         line-height: 1rem;
+        margin-left: 0.5rem;
+
+        @media only screen and (max-width: 767px) {
+          font-size: 13px;
+        }
       }
 
       ul {
@@ -188,6 +233,12 @@ footer {
 
       span {
         margin: 0 0.5rem;
+      }
+    }
+
+    div {
+      @media only screen and (max-width: 767px) {
+        margin: 0.333rem 0 0.333rem 1rem;
       }
     }
   }

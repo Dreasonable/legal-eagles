@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <!-- <HelloWorld msg="Hello World!" /> -->
-    <div class="hero">
-      <div class="container">
+    <div class="container--full-screen">
+      <div class="hero">
         <h1>The first name <br>in <span>corporate law</span>.</h1>
         <h4>Meet our Team +</h4>
       </div>
