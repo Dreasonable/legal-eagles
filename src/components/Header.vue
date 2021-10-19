@@ -40,6 +40,7 @@ export default {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  border-top: 5px solid black;
 
   &__brand {
     margin-top: 1.77rem;
