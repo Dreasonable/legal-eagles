@@ -9,9 +9,12 @@
   },
   "dependencies": {
     "core-js": "^3.8.2",
+    "fibers": "^5.0.0",
+    "sass": "^1.43.3",
     "swiper": "^6.8.4",
     "vue": "^3.2.20",
     "vue-router": "^4.0.2",
+    "vue-template-compiler": "^2.6.14",
     "vuex": "^4.0.0-rc.2"
   },
   "devDependencies": {
