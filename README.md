@@ -1,6 +1,6 @@
-## Vue Boilerplate
+## NV Interactive
 
-Includes barebone nav and data.
+Developer Test Website
 
 ## Project setup
 ```
