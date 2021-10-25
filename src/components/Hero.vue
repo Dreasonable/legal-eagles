@@ -20,43 +20,75 @@
         </div>
       </div>
     </div>
-
-    <div class="hero--slider-controls">
-      <button @click="prev()">
-        <img alt="Left arrow icon" src="../assets/icon-left-arrow.svg" />
-      </button>
-      <button @click="next()">
-        <img alt="Right arrow icon" src="../assets/icon-right-arrow.svg" />
-      </button>
-    </div>
-
+    <swiper
+      class="swiper"
+      :slidesPerView="1"
+      :centeredSlides="true"
+      :spaceBetween="0"
+      :grabCursor="false"
+      :navigation="true"
+      :scrollbar="false"
+    >
+      <swiper-slide
+        v-for="image in backgrounds"
+        v-show="isDesktop()"
+        :key="image.id">
+        <img
+          :src="require(`@/assets/${image.imageUrl}.png`)"
+          alt="Background image"
+          class="image"
+        />
+      </swiper-slide>
+      <swiper-slide
+        v-for="image in backgroundsMobile"
+        v-show="isMobile()"
+        :key="image.id">
+        <img
+          :src="require(`@/assets/${image.imageUrl}.png`)"
+          alt="Background image"
+          class="image"
+        />
+      </swiper-slide>
+    </swiper>
   </div>
 </template>
 
 <script>
+import SwiperCore, { Navigation, Scrollbar, Parallax } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+import "swiper/swiper.scss";
+import "swiper/components/navigation/navigation.scss";
+import "swiper/components/scrollbar/scrollbar.scss";
+
+SwiperCore.use([Navigation, Scrollbar, Parallax]);
+
 export default {
   name: "Hero",
-  components: {},
+  components: {
+    Swiper,
+    SwiperSlide
+  },
   data() {
     return {
-      backgrounds: ["../assets/Hero-1.png", "../assets/Hero-2.png"],
-      backgroundIndex: 0
+      backgrounds: [
+        {id: 1, imageUrl: "Hero-1"},
+        {id: 2, imageUrl:"Hero-2"}
+      ],
+      backgroundsMobile: [
+        {id: 1, imageUrl: "Hero-1-mobile"},
+        {id: 2, imageUrl:"Hero-1-mobile"}
+      ],
+      parallaxSwiperWidth: 0
+      // backgroundUrl: this.backgrounds[0]
     };
   },
   methods: {
-    next() {
-      if (this.backgroundIndex >= this.backgrounds.length - 1) {
-        return;
-      }
-      this.backgroundIndex++;
-      console.log(this.backgroundIndex);
+    isDesktop() {
+      return window.innerWidth > 767;
     },
-    prev() {
-      if (this.backgroundIndex <= 0) {
-        return;
-      }
-      this.backgroundIndex--;
-      console.log(this.backgroundIndex);
+    isMobile() {
+      return window.innerWidth < 768;
     }
   }
 };
@@ -65,19 +97,17 @@ export default {
 <style scoped lang="scss">
 .hero {
   position: relative;
+  top: -1px;
   height: 702px;
-  background-image: url("../assets/Hero-1.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   color: #fff;
 
   @media only screen and (max-width: 767px) {
-    background-image: url("../assets/Hero-1-mobile.png");
     height: 560px;
+    top: -5px;
   }
 
   &--content {
@@ -86,15 +116,20 @@ export default {
     justify-content: center;
     position: relative;
     height: 100%;
+    z-index: 5;
 
     @media only screen and (max-width: 767px) {
-      margin: 15px;
+      margin: 0 15px;
+      height: fit-content;
     }
 
     &__brand {
-      position: absolute;
-      top: 20px;
+      margin-top: 15px;
       z-index: 30;
+
+      @media only screen and (max-width: 767px) {
+        margin-left: 15px;
+      }
 
       img {
         @media only screen and (max-width: 767px) {
@@ -106,6 +141,10 @@ export default {
 
     &__text {
       width: 1054px;
+
+      @media only screen and (max-width: 767px) {
+        margin-left: 15px;
+      }
 
       h1 {
         margin-bottom: 0;
@@ -191,6 +230,12 @@ export default {
         }
       }
     }
+  }
+
+  .swiper {
+    position: absolute !important;
+    width: 100%;
+    height: 100%;
   }
 }
 </style>

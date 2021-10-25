@@ -11,17 +11,16 @@
       :grabCursor="true"
       :navigation="false"
       :scrollbar="true"
-      :breakpoints='{
-        "768": {
-          "slidesPerView": 4
-          /* "slidesPerGroup": 2 */
+      :breakpoints="{
+        '768': {
+          slidesPerView: 4,
+          scrollbar: {
+            draggable: true
+          }
         }
-      }'
+      }"
     >
-      <swiper-slide
-        v-for="news in newsList"
-        :key="news.id"
-      >
+      <swiper-slide v-for="news in newsList" :key="news.id">
         <div class="news--item">
           <div class="news--item__title">{{ news.title }}</div>
           <div class="news--item__content">{{ news.content }}</div>
@@ -34,29 +33,28 @@
 </template>
 
 <script>
-import SwiperCore, { Navigation, Scrollbar, Parallax } from "swiper";
+import SwiperCore, { Navigation, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 
-import newsList from '../data/news.json';
+import newsList from "../data/news.json";
 
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
 
-SwiperCore.use([Navigation, Scrollbar, Parallax]);
+SwiperCore.use([Navigation, Scrollbar]);
 
 export default {
   name: "NewsSlider",
   data() {
     return {
-      newsList,
-      parallaxSwiperWidth: 0,
+      newsList
     };
   },
   components: {
     Swiper,
     SwiperSlide
-  },
+  }
 };
 </script>
 
@@ -66,7 +64,7 @@ export default {
   flex-direction: column;
 
   h2 {
-    color: #2F2D2D;
+    color: #2f2d2d;
     font-size: 60px;
     font-weight: 800;
     width: 60%;
@@ -81,10 +79,9 @@ export default {
   }
 
   &--item {
-
     &__title {
       font-size: 16px;
-      color: #AFACAC;
+      color: #afacac;
     }
 
     &__content {
@@ -99,7 +96,7 @@ export default {
       font-weight: 300;
       letter-spacing: 0;
       line-height: 40px;
-      color: #AFACAC;
+      color: #afacac;
     }
 
     div {
@@ -116,7 +113,6 @@ export default {
   }
 
   .swiper {
-
     &-container {
       overflow: visible !important;
       margin: 0 28px;
@@ -132,5 +128,4 @@ export default {
     }
   }
 }
-
 </style>

@@ -108,13 +108,45 @@ button {
   z-index: 50 !important;
   height: 4px !important;
   width: 100% !important;
+
+  @media only screen and (max-width: 767px) {
+    opacity: 1 !important;
+  }
 }
 
 .swiper-scrollbar-drag {
-  background: #2F2D2D !important;
+  background: #2f2d2d !important;
   border-radius: 0 !important;
 }
 
+.hero {
+  .swiper-container {
+    .swiper-button-prev, .swiper-button-next {
+      position: absolute !important;
+      top: auto !important;
+      left: auto !important;
+      bottom: 40px !important;
+      color: white;
+    }
+
+    .swiper-button-prev {
+      right: 120px !important;
+    }
+
+    .swiper-button-next {
+      right: 45px !important;
+    }
+
+    .swiper-slide {
+      .image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
 #app {
+  overflow: hidden;
 }
 </style>

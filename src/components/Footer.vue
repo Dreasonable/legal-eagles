@@ -104,7 +104,8 @@ footer {
 .footer {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: auto;
+  margin-top: 144px;
 
   @media only screen and (max-width: 767px) {
     margin-top: 70px;
@@ -122,7 +123,7 @@ footer {
     height: 140px;
     color: #2f2d2d;
     font-size: 12px;
-    line-height: 1rem;
+    line-height: 18px;
     font-weight: 300;
 
     @media only screen and (max-width: 767px) {
@@ -133,14 +134,14 @@ footer {
     &__content {
       display: flex;
       justify-content: space-between;
-      padding: 2rem 0;
+      padding: 36px 0;
       margin: 0 auto;
 
       div {
         width: 25%;
 
         @media only screen and (max-width: 767px) {
-          margin: 0.5rem;
+          margin: 10px;
           width: fit-content;
         }
       }

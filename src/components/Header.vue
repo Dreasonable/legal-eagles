@@ -12,7 +12,10 @@
         />
       </router-link>
     </div>
-    <button @click="openCloseMenu()">
+    <button
+      id="hamburger"
+      @click="openCloseMenu()"
+    >
       <img alt="Open menu" src="../assets/icon-hamburger.svg" />
     </button>
     <nav
@@ -76,17 +79,23 @@ export default {
       this.mobileMenuOpen = false;
     },
     onScroll() {
-      var header = document.getElementById("header");
-      var headerLogo = document.getElementById("header--logo-small");
+      const header = document.getElementById("header");
+      const headerLogo = document.getElementById("header--logo-small");
+      const hamburger = document.getElementById("hamburger");
       if (window.top.scrollY > 100) {
-        header.classList.add("header-scrolled");
+        header.classList.add("header--scrolled");
       } else {
-        header.classList.remove("header-scrolled");
+        header.classList.remove("header--scrolled");
       }
       if (window.top.scrollY > 100) {
-        headerLogo.classList.add("logoScrolled");
+        headerLogo.classList.add("logo--scrolled");
       } else {
-        headerLogo.classList.remove("logoScrolled");
+        headerLogo.classList.remove("logo--scrolled");
+      }
+      if (window.top.scrollY > 520) {
+        hamburger.classList.add("hamburger--scrolled");
+      } else {
+        hamburger.classList.remove("hamburger--scrolled");
       }
     }
   }
@@ -118,6 +127,7 @@ export default {
     height: 75px;
     width: 75px;
     margin-left: auto;
+    border-radius: 50%;
 
     @media only screen and (max-width: 767px) {
       display: block;
@@ -222,21 +232,25 @@ export default {
     }
   }
 
-  .logoScrolled {
+  .logo--scrolled {
     top: 10px;
     transition: top 1s;
   }
 }
 
 @media only screen and (min-width: 767px) {
-  .header-scrolled {
+  .header--scrolled {
     position: fixed;
     height: 80px;
     background-color: black;
     transition: background-color 0.5s, height 0.5s;
   }
 }
-
+.hamburger--scrolled {
+  background-color: rgba(10, 10, 10, 0.3);
+  border-radius: 50%;
+  transition: all 1s;
+}
 .headerFull {
   height: 100vh;
   transition: height 0.01s;
