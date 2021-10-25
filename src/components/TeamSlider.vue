@@ -18,6 +18,27 @@
       :scrollbar="true"
       :breakpoints="{
         '768': {
+          slidesPerView: 2,
+          scrollbar: {
+            hide: false,
+            draggable: true
+          }
+        },
+        '850': {
+          slidesPerView: 2.5,
+          scrollbar: {
+            hide: true,
+            draggable: true
+          }
+        },
+        '1000': {
+          slidesPerView: 3,
+          scrollbar: {
+            hide: true,
+            draggable: true
+          }
+        },
+        '1400': {
           slidesPerView: 3.5,
           scrollbar: {
             hide: true,
@@ -37,9 +58,6 @@
           <div class="team--profile__position">{{ person.position }}</div>
         </div>
       </swiper-slide>
-      <!-- <div class="swiper-scrollbar">
-        <div class="swiper-scrollbar-drag"></div>
-      </div> -->
     </swiper>
   </div>
 </template>
@@ -60,7 +78,7 @@ export default {
   name: "TeamSlider",
   data() {
     return {
-      team,
+      team
     };
   },
   components: {
@@ -160,7 +178,7 @@ export default {
       }
 
       img:hover {
-        box-shadow: 0 0 30px 0 rgba(0,0,0,0.1);
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
         transform: scale(1.05);
         transition: all 1s;
         z-index: 10;

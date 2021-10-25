@@ -126,7 +126,7 @@ footer {
     line-height: 18px;
     font-weight: 300;
 
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 1100px) {
       height: auto;
       margin: 0 15px;
     }
@@ -140,13 +140,17 @@ footer {
       div {
         width: 25%;
 
+        @media only screen and (max-width: 1100px) {
+          margin-bottom: 10px;
+        }
+
         @media only screen and (max-width: 767px) {
           margin: 10px;
           width: fit-content;
         }
       }
 
-      @media only screen and (max-width: 767px) {
+      @media only screen and (max-width: 1100px) {
         flex-direction: column;
         align-items: flex-start;
         margin-left: 40%;

@@ -32,7 +32,8 @@
       <swiper-slide
         v-for="image in backgrounds"
         v-show="isDesktop()"
-        :key="image.id">
+        :key="image.id"
+      >
         <img
           :src="require(`@/assets/${image.imageUrl}.png`)"
           alt="Background image"
@@ -42,7 +43,8 @@
       <swiper-slide
         v-for="image in backgroundsMobile"
         v-show="isMobile()"
-        :key="image.id">
+        :key="image.id"
+      >
         <img
           :src="require(`@/assets/${image.imageUrl}.png`)"
           alt="Background image"
@@ -72,12 +74,12 @@ export default {
   data() {
     return {
       backgrounds: [
-        {id: 1, imageUrl: "Hero-1"},
-        {id: 2, imageUrl:"Hero-2"}
+        { id: 1, imageUrl: "Hero-1" },
+        { id: 2, imageUrl: "Hero-2" }
       ],
       backgroundsMobile: [
-        {id: 1, imageUrl: "Hero-1-mobile"},
-        {id: 2, imageUrl:"Hero-1-mobile"}
+        { id: 1, imageUrl: "Hero-1-mobile" },
+        { id: 2, imageUrl: "Hero-1-mobile" }
       ],
       parallaxSwiperWidth: 0
       // backgroundUrl: this.backgrounds[0]
@@ -106,6 +108,7 @@ export default {
   color: #fff;
 
   @media only screen and (max-width: 767px) {
+    align-items: flex-start;
     height: 560px;
     top: -5px;
   }
@@ -113,18 +116,20 @@ export default {
   &--content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     position: relative;
-    height: 100%;
     z-index: 5;
 
     @media only screen and (max-width: 767px) {
       margin: 0 15px;
       height: fit-content;
+      width: fit-content;
     }
 
     &__brand {
+      width: fit-content;
       margin-top: 15px;
+      margin-left: 28px;
       z-index: 30;
 
       @media only screen and (max-width: 767px) {
@@ -141,16 +146,31 @@ export default {
 
     &__text {
       width: 1054px;
+      margin-top: 108px;
+      margin-left: 28px;
 
       @media only screen and (max-width: 767px) {
         margin-left: 15px;
+        margin-top: 50px;
       }
 
       h1 {
+        margin-top: 0;
         margin-bottom: 0;
 
         span {
           color: lightgrey;
+        }
+
+        @media only screen and (max-width: 1000px) {
+          font-size: 70px;
+          line-height: 80px;
+        }
+
+        @media only screen and (max-width: 767px) {
+          font-size: 60px;
+          letter-spacing: -1.2px;
+          line-height: 60px;
         }
       }
 

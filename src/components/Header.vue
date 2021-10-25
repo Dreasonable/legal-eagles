@@ -12,10 +12,7 @@
         />
       </router-link>
     </div>
-    <button
-      id="hamburger"
-      @click="openCloseMenu()"
-    >
+    <button id="hamburger" @click="openCloseMenu()">
       <img alt="Open menu" src="../assets/icon-hamburger.svg" />
     </button>
     <nav
@@ -103,10 +100,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.navScrolled {
-  // height: 40px;
-}
-
 .header {
   position: fixed;
   display: flex;
@@ -129,7 +122,7 @@ export default {
     margin-left: auto;
     border-radius: 50%;
 
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 1000px) {
       display: block;
     }
   }
@@ -137,7 +130,7 @@ export default {
   nav {
     padding-bottom: 20px;
 
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 1000px) {
       position: absolute;
       right: -50%;
       transition: right 0.2s;
@@ -156,10 +149,8 @@ export default {
       margin: 0;
       margin-right: 2.66rem;
       padding: 0;
-      // position: relative;
-      // top: -5px;
 
-      @media only screen and (max-width: 767px) {
+      @media only screen and (max-width: 1000px) {
         flex-direction: column;
         justify-content: space-around;
         height: 50%;
@@ -183,7 +174,7 @@ export default {
         border-top: 5px solid grey;
       }
 
-      @media only screen and (max-width: 767px) {
+      @media only screen and (max-width: 1000px) {
         border: none;
 
         &:hover {
@@ -229,6 +220,10 @@ export default {
 
     @media only screen and (max-width: 767px) {
       display: none;
+    }
+
+    a {
+      margin-left: 28px;
     }
   }
 

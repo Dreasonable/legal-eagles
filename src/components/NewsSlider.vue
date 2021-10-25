@@ -13,6 +13,12 @@
       :scrollbar="true"
       :breakpoints="{
         '768': {
+          slidesPerView: 3,
+          scrollbar: {
+            draggable: true
+          }
+        },
+        '1000': {
           slidesPerView: 4,
           scrollbar: {
             draggable: true

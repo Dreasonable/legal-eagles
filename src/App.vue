@@ -49,12 +49,20 @@ h1 {
 .container {
   width: 1400px;
 
+  @media only screen and (max-width: 1400px) {
+    width: 100%;
+  }
+
   @media only screen and (max-width: 767px) {
     width: 100%;
   }
 
   &--wide {
     width: 1680px;
+
+    @media only screen and (max-width: 1400px) {
+      width: 100%;
+    }
 
     @media only screen and (max-width: 767px) {
       width: 100%;
@@ -63,6 +71,10 @@ h1 {
 
   &--narrow {
     width: 924px;
+
+    @media only screen and (max-width: 924px) {
+      width: 100%;
+    }
 
     @media only screen and (max-width: 767px) {
       width: 100%;
@@ -121,7 +133,8 @@ button {
 
 .hero {
   .swiper-container {
-    .swiper-button-prev, .swiper-button-next {
+    .swiper-button-prev,
+    .swiper-button-next {
       position: absolute !important;
       top: auto !important;
       left: auto !important;
