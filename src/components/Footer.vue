@@ -2,13 +2,17 @@
   <footer>
     <div class="footer container">
       <div class="footer--top">
-        <img class="logo-small" alt="Legal Eagle logo" src="../assets/logo-small-legal-eagles.svg" />
+        <img
+          class="logo-small"
+          alt="Legal Eagle logo"
+          src="../assets/logo-small-legal-eagles.svg"
+        />
         <div class="footer--top__content container--narrow">
           <div class="address">
             <span class="bold">Legal Eagles Limited</span>
             <span>100 Quay Street</span>
             <span>Auckland 1010, New Zealand</span>
-            <span>P: 09  300 0019</span>
+            <span>P: 09 300 0019</span>
           </div>
           <div class="footer--links">
             <ul>
@@ -34,18 +38,30 @@
           <span class="extrabold">Follow us</span>
           <ul>
             <li>
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img alt="Facebook link" src="../assets/icon-facebook.svg" />
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img alt="Linked In link" src="../assets/icon-linkedin.svg" />
               </a>
             </li>
             <!-- TODO: Youtube SVG incorrect from design. Will fix if have time -->
             <li>
-              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img alt="Youtube link" src="../assets/icon-youtube.svg" />
               </a>
             </li>
@@ -74,28 +90,24 @@
 export default {
   name: "Footer",
   data() {
-    return {
-    };
+    return {};
   },
-  methods: {
-  }
+  methods: {}
 };
 </script>
 
 <style scoped lang="scss">
-
 footer {
   border-bottom: 5px solid black;
 }
 
 .footer {
-  border-top: 1px solid #EBEBEB;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
 
   @media only screen and (max-width: 767px) {
-    margin: 0 1rem;
+    margin-top: 70px;
   }
 
   a {
@@ -105,15 +117,17 @@ footer {
   }
 
   &--top {
+    border-top: 1px solid #ebebeb;
     position: relative;
     height: 140px;
-    color: #2F2D2D;
+    color: #2f2d2d;
     font-size: 12px;
     line-height: 1rem;
     font-weight: 300;
 
     @media only screen and (max-width: 767px) {
       height: auto;
+      margin: 0 15px;
     }
 
     &__content {
@@ -127,14 +141,16 @@ footer {
 
         @media only screen and (max-width: 767px) {
           margin: 0.5rem;
-          width: 100%;
+          width: fit-content;
         }
       }
 
       @media only screen and (max-width: 767px) {
         flex-direction: column;
         align-items: flex-start;
-        margin-left: 33.33%;
+        margin-left: 40%;
+        width: 60%;
+        padding: 21px 0;
       }
     }
 
@@ -173,8 +189,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     color: #ffffff;
-    background-color: #2F2D2D;
-    width: 100%;
+    background-color: #2f2d2d;
     height: 50px;
 
     @media only screen and (max-width: 767px) {
@@ -183,6 +198,7 @@ footer {
       align-items: flex-start;
       height: 140px;
       font-size: 13px;
+      margin: 0 15px;
     }
 
     .social-media--links {
@@ -243,5 +259,4 @@ footer {
     }
   }
 }
-
 </style>

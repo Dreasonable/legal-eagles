@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Joseph Patel",
+    "position": "Partner",
+    "imageUrl": "profile-1"
+  },
+  {
+    "id": 2,
+    "name": "Samantha Peters",
+    "position": "Partner",
+    "imageUrl": "profile-2"
+  },
+  {
+    "id": 3,
+    "name": "Peter Fitsimmons",
+    "position": "Managing Partner",
+    "imageUrl": "profile-3"
+  },
+  {
+    "id": 4,
+    "name": "Susan McDonald",
+    "position": "Partner",
+    "imageUrl": "profile-4"
+  },
+  {
+    "id": 5,
+    "name": "Joseph Patel",
+    "position": "Partner",
+    "imageUrl": "profile-1"
+  },
+  {
+    "id": 6,
+    "name": "Samantha Peters",
+    "position": "Partner",
+    "imageUrl": "profile-2"
+  },
+  {
+    "id": 7,
+    "name": "Peter Fitsimmons",
+    "position": "Managing Partner",
+    "imageUrl": "profile-3"
+  },
+  {
+    "id": 8,
+    "name": "Susan McDonald",
+    "position": "Partner",
+    "imageUrl": "profile-4"
+  }
+]

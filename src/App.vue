@@ -1,5 +1,4 @@
 <template>
-
   <Header />
   <router-view />
   <Footer />
@@ -23,14 +22,28 @@ export default {
 </script>
 
 <style lang="scss">
-
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
 
 body {
-  box-sizing: border-box;
   margin: 0;
-  font-family: 'OpenSans', sans-serif;
-  background-color: #FAFAFA;
+  font-family: "Open Sans", sans-serif;
+  background-color: #fafafa;
+}
+
+h1 {
+  // height: 210px;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 100px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 105px;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 60px;
+    letter-spacing: -1.2px;
+    line-height: 60px;
+  }
 }
 
 .container {
@@ -61,7 +74,6 @@ body {
   }
 }
 
-
 .extrabold {
   font-weight: 800;
 }
@@ -80,6 +92,27 @@ body {
 
 .light {
   font-weight: 300;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.swiper-scrollbar {
+  border-radius: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  z-index: 50 !important;
+  height: 4px !important;
+  width: 100% !important;
+}
+
+.swiper-scrollbar-drag {
+  background: #2F2D2D !important;
+  border-radius: 0 !important;
 }
 
 #app {

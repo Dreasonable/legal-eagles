@@ -25,10 +25,9 @@
 </template>
 
 <script>
-
 export default {
-  name: "Nothing",
+  name: "Nothing"
 };
 </script>
 
-<style scoped></style>
+<style scoped lang="scss"></style>
